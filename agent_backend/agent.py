@@ -6,7 +6,7 @@ import os
 app = FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
-OPENAI_API_KEY = os.getenv("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") or "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"
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 llm = ChatOpenAI(openai_api_key=OPENAI_API_KEY, model="gpt-3.5-turbo")
 
 @app.post("/summarize_parking")
