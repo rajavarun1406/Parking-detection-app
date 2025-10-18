@@ -22,7 +22,7 @@ function App() {
   const [predictions, setPredictions] = useState([]);
   const [records, setRecords] = useState([]);
   const [showChat, setShowChat] = useState(false);
-
+  const apiUrl = process.env.REACT_APP_API_BASE;
   const parkingDetectionRef = useRef();
 
   const handleSampleClick = (filename) => {
