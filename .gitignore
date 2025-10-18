@@ -1,4 +1,17 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Ignore Python environment variables and cache
+agent_backend/.env
+agent_backend/__pycache__/
+
+# Node modules and build outputs
+node_modules/
+build/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
 
 # dependencies
 /node_modules
@@ -21,3 +34,5 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.env
+__pycache__/
