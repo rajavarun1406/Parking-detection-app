@@ -6,6 +6,8 @@ import os
 app = FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
 llm = ChatOpenAI(openai_api_key=OPENAI_API_KEY, model="gpt-3.5-turbo")
 
 @app.post("/summarize_parking")
@@ -28,6 +30,4 @@ async def summarize_parking(request: Request):
     else:
         summary = f"Parking lot usage: {percent:.1f}%. There are still {num_available} slot(s) open."
 
-    return {
-        "summary": summary
-    }
+    return {"summary": summary}
