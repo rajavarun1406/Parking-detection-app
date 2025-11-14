@@ -2,3 +2,4 @@ fastapi
 uvicorn
 langchain_openai
 gunicorn
+python-dotenv
