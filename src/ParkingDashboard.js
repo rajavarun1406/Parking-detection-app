@@ -12,7 +12,7 @@ export default function ParkingDashboard({ predictions }) {
   // Button handler: get natural language summary from backend
   const getSummary = async () => {
     try {
-      const res = await axios.post("http://localhost:8001/summarize_parking", {
+      const res = await axios.post("https://smart-parking-detection.onrender.com", {
         detectedSpots: predictions
       });
       setSummary(res.data.summary);
